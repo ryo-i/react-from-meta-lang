@@ -1,4 +1,3 @@
-
 const hello = JSON.parse(
     '{"message":{"text":"こんにちは、ふろんとえんど。","selector":".inner__text--hello"}}'
     );
