@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer className="footer">
-        <p className="footer__text">©️ web-coding-getting-sterted</p>
+        <p className="footer__text">©️ react-from-meta-lang</p>
     </footer>
   );
 }
