@@ -1,10 +1,14 @@
 import React from 'react';
+import Data from './data.json';
+
+const title = Data.data.header.title;
+const text = Data.data.header.text;
 
 function Header() {
   return (
     <header className="header">
-        <h1 className="header__title">Reactとメタ言語の比較</h1>
-        <p className="header__text">以前作ったメタ言語スターターキットの内容をReact環境で再現してみる</p>
+        <h1 className="header__title">{ title }</h1>
+        <p className="header__text">{ text }</p>
     </header>
   );
 }

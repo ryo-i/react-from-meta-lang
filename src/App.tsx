@@ -3,9 +3,10 @@ import {Helmet} from "react-helmet";
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
+import Data from './data.json';
 
-const titleText = 'Reactとメタ言語の比較';
-const descriptionText = '以前作ったメタ言語スターターキットの内容をReact環境で再現してみる';
+const titleText = Data.data.header.title;
+const descriptionText = Data.data.header.text;
 
 function App() {
   return (
