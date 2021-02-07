@@ -11,7 +11,7 @@ function Main() {
     <main>
       <section className="main">
           <h1 className="main__title">{ title }</h1>
-          <p className="main__title">{ text }</p>
+          <p className="main__title" dangerouslySetInnerHTML={{ __html: text }}></p>
           <Inner />
       </section>
     </main>
