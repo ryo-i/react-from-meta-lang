@@ -2,21 +2,17 @@ import React from 'react';
 import './hello';
 import Data from './data.json';
 
-const text = Data.data.footer.text;
-
-
+const innerJson = Data.data.inner;
 
 function Inner() {
   return (
-    <div className="inner">        
-        <section className="inner__sec">
-            <h2 className="inner__title">CSS（文字色）</h2>
-            <p className="inner__text">CSSでタイトルの文字色変更。</p>
+    <div className="inner">
+      {innerJson.map((val) => 
+        <section key={ val.toString() }>
+          <h2 className="inner__title">{ val.title }</h2>
+          <p className="inner__text" dangerouslySetInnerHTML={{ __html: val.text }}></p>
         </section>
-        <section className="inner__sec">
-            <h2 className="inner__title">JS（文字列）</h2>
-            <p className="inner__text">JSでテキストの文字列追加→「<span className='inner__text--hello'></span>」</p>
-        </section>
+      )}
     </div>
   );
 }
