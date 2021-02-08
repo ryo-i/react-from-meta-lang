@@ -1,12 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createGlobalStyle } from 'styled-components'
+import cssVariables from './css_variables.json'
+
+
+const variable = cssVariables.variable;
+console.log(variable.baseColor);
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: ${variable.textSize};
+    color: ${variable.textColor};
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+    a {
+        color: $base-color;
+    }
+  }
+`;
 
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
