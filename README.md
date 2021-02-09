@@ -9,6 +9,9 @@
 【React】JSONデータをJSXに読み込んで表示する（Reactとメタ言語の比較-3）  
 ※参考：[https://www.i-ryo.com/entry/2021/02/08/065133]
 
+【React】styled-componentsのcreateGlobalStyleでbodyタグにCSS設定（Reactとメタ言語の比較-4）  
+※参考：[https://www.i-ryo.com/entry/2021/02/09/183209]
+
 ---
 
 プレビュー（GitHub Pages）  
