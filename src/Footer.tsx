@@ -1,13 +1,20 @@
 import React from 'react';
-import Data from './data.json';
+import Data from './data/data.json';
+import styled from 'styled-components';
+import { pageSize } from './style/mixin';
 
 const text = Data.data.footer.text;
 
+const FooterTag = styled.footer`
+  ${pageSize}
+  text-align: center;
+`;
+
 function Footer() {
   return (
-    <footer className="footer">
-        <p className="footer__text" dangerouslySetInnerHTML={{ __html: text }}></p>
-    </footer>
+    <FooterTag>
+        <p dangerouslySetInnerHTML={{ __html: text }}></p>
+    </FooterTag>
   );
 }
 

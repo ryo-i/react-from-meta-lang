@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createGlobalStyle } from 'styled-components'
-import cssVariables from './css_variables.json'
-
+import { createGlobalStyle } from 'styled-components';
+import cssVariables from './style/variables.json';
 
 const variable = cssVariables.variable;
-console.log(variable.baseColor);
 
 const GlobalStyle = createGlobalStyle`
   body {

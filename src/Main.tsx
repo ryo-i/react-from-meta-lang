@@ -1,19 +1,27 @@
 import React from 'react';
 import Inner from './Inner';
-import Data from './data.json';
+import Data from './data/data.json';
+import styled from 'styled-components';
+import { pageSize } from './style/mixin';
 
 const title = Data.data.main.title;
 const text = Data.data.main.text;
 
+const SectionTag = styled.section`
+  ${pageSize}
+  & h1 {
+    font-size: 1.5em;
+  }
+`;
 
 function Main() {
   return (
     <main>
-      <section className="main">
-          <h1 className="main__title">{ title }</h1>
-          <p className="main__title" dangerouslySetInnerHTML={{ __html: text }}></p>
+      <SectionTag>
+          <h1>{ title }</h1>
+          <p dangerouslySetInnerHTML={{ __html: text }}></p>
           <Inner />
-      </section>
+      </SectionTag>
     </main>
   );
 }

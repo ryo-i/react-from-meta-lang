@@ -1,17 +1,27 @@
 import React from 'react';
-import './hello';
-import Data from './data.json';
+import './modules/hello/hello';
+import Data from './data/data.json';
+import styled from 'styled-components';
+import cssVariables from './style/variables.json';
 
+const variable = cssVariables.variable;
 const innerJson = Data.data.inner;
+
+const SectionTag = styled.section`
+  & h2 {
+    font-size: 1.25em;
+    color: ${variable.baseColor};
+  }
+`;
 
 function Inner() {
   return (
     <div className="inner">
       {innerJson.map((innerJson, index) => 
-        <section key={ index }>
-          <h2 className="inner__title">{ innerJson.title }</h2>
-          <p className="inner__text" dangerouslySetInnerHTML={{ __html: innerJson.text }}></p>
-        </section>
+        <SectionTag key={ index }>
+          <h2>{ innerJson.title }</h2>
+          <p dangerouslySetInnerHTML={{ __html: innerJson.text }}></p>
+        </SectionTag>
       )}
     </div>
   );
