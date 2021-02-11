@@ -1,8 +1,11 @@
 import React from 'react';
-import './modules/hello/hello';
+import { hello } from './modules/hello/hello';
 import Data from './data/data.json';
 import styled from 'styled-components';
 import cssVariables from './style/variables.json';
+
+// modules
+hello();
 
 const variable = cssVariables.variable;
 const innerJson = Data.data.inner;
