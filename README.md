@@ -15,6 +15,9 @@
 【React】styled-componentsのcss helperでスタイルを継承（Reactとメタ言語の比較-5）  
 ※参考：[https://www.i-ryo.com/entry/2021/02/11/151759]
 
+【React】ピュアなTypeScriptモジュールを追加してみる（Reactとメタ言語の比較-6）  
+※参考：[https://www.i-ryo.com/entry/2021/02/12/065827]
+
 ---
 
 プレビュー（GitHub Pages）  
