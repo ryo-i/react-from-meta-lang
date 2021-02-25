@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const variable = cssVariables.variable;
 const title = Data.data.header.title;
 const text = Data.data.header.text;
+const homeUrl = process.env.PUBLIC_URL;
 
 
 const HeaderTag = styled.header`
@@ -32,8 +33,8 @@ function Header() {
         <p dangerouslySetInnerHTML={{ __html: text }}></p>
           <nav>
             <span>MENU:</span>
-            <span><Link to="/">Home</Link></span>
-            <span><Link to="/other">Other</Link></span>
+            <span><Link to={ homeUrl + "/" }>Home</Link></span>
+            <span><Link to={ homeUrl + "/other" }>Other</Link></span>
           </nav>
     </HeaderTag>
   );

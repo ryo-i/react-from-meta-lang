@@ -13,6 +13,7 @@ const mainTitle = Data.data.main.title;
 const mainText = Data.data.main.text;
 const otherTitle = Data.data.other.title;
 const otherText = Data.data.other.text;
+const homeUrl = process.env.PUBLIC_URL;
 
 
 const SectionTag = styled.section`
@@ -28,12 +29,12 @@ function Main() {
     <main>
       <SectionTag>
         <Switch>
-          <Route exact path="/">
+          <Route exact path={ homeUrl + "/" }>
             <h1>{ mainTitle }</h1>
             <p dangerouslySetInnerHTML={{ __html: mainText }}></p>
             <Inner />
           </Route>
-          <Route path="/other">
+          <Route path={ homeUrl + "/other" }>
             <h1>{ otherTitle }</h1>
             <p dangerouslySetInnerHTML={{ __html: otherText }}></p>
           </Route>
