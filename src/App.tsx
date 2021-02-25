@@ -4,22 +4,47 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import Data from './data/data.json';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 
-const titleText = Data.data.header.title;
-const descriptionText = Data.data.header.text;
+
+// const titleText = Data.data.header.title;
+// const descriptionText = Data.data.header.text;
+const mainTitle = Data.data.main.title;
+const mainDescription = Data.data.main.text;
+const otherTitle = Data.data.other.title;
+const otherDescription = Data.data.other.text;
+
 
 function App() {
   return (
     <div className="App">
-        <Helmet
-            title={ titleText }
-            meta={[
-                { name: 'description', content: descriptionText }
-            ]}
-         />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Helmet
+              title={ mainTitle }
+              meta={[
+                  { name: 'description', content: mainDescription }
+              ]}
+            />
+          </Route>
+          <Route path="/other">
+            <Helmet
+              title={ otherTitle }
+              meta={[
+                  { name: 'description', content: otherDescription }
+              ]}
+            />
+          </Route>
+        </Switch>
         <Header />
         <Main />
         <Footer />
+      </Router>
     </div>
   );
 }

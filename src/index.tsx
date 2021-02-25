@@ -5,7 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
 import cssVariables from './style/variables.json';
 
+
 const variable = cssVariables.variable;
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,7 +20,10 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     a {
-        color: $base-color;
+        color: ${variable.baseColor};
+        &:hover {
+          opacity: 0.8;
+        }
     }
   }
 `;

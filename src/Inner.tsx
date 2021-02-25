@@ -4,11 +4,10 @@ import Data from './data/data.json';
 import styled from 'styled-components';
 import cssVariables from './style/variables.json';
 
-// modules
-hello();
 
 const variable = cssVariables.variable;
 const innerJson = Data.data.inner;
+
 
 const SectionTag = styled.section`
   & h2 {
@@ -17,10 +16,14 @@ const SectionTag = styled.section`
   }
 `;
 
+
 function Inner() {
+  // modules
+  hello();
+
   return (
     <div className="inner">
-      {innerJson.map((innerJson, index) => 
+      {innerJson.map((innerJson, index) =>
         <SectionTag key={ index }>
           <h2>{ innerJson.title }</h2>
           <p dangerouslySetInnerHTML={{ __html: innerJson.text }}></p>

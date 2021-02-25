@@ -3,9 +3,17 @@ import Inner from './Inner';
 import Data from './data/data.json';
 import styled from 'styled-components';
 import { pageSize } from './style/mixin';
+import {
+  Switch,
+  Route
+} from 'react-router-dom';
 
-const title = Data.data.main.title;
-const text = Data.data.main.text;
+
+const mainTitle = Data.data.main.title;
+const mainText = Data.data.main.text;
+const otherTitle = Data.data.other.title;
+const otherText = Data.data.other.text;
+
 
 const SectionTag = styled.section`
   ${pageSize}
@@ -14,13 +22,22 @@ const SectionTag = styled.section`
   }
 `;
 
+
 function Main() {
   return (
     <main>
       <SectionTag>
-          <h1>{ title }</h1>
-          <p dangerouslySetInnerHTML={{ __html: text }}></p>
-          <Inner />
+        <Switch>
+          <Route exact path="/">
+            <h1>{ mainTitle }</h1>
+            <p dangerouslySetInnerHTML={{ __html: mainText }}></p>
+            <Inner />
+          </Route>
+          <Route path="/other">
+            <h1>{ otherTitle }</h1>
+            <p dangerouslySetInnerHTML={{ __html: otherText }}></p>
+          </Route>
+        </Switch>
       </SectionTag>
     </main>
   );
