@@ -5,12 +5,12 @@ const selector: string = message.selector;
 
 
 const hello = (): void => {
-    document.addEventListener('DOMContentLoaded', () => {
+    // document.addEventListener('DOMContentLoaded', () => {
         const dom: HTMLButtonElement = document.querySelector(selector) as HTMLButtonElement;
         console.log(dom);
         dom.innerHTML = text;
         console.log('text-> ' + text);
-    });
+    // });
 }
 
 export { hello };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import { hello } from './modules/hello/hello';
 import Data from './data/data.json';
 import styled from 'styled-components';
@@ -18,8 +18,10 @@ const SectionTag = styled.section`
 
 
 function Inner() {
-  // modules
-  hello();
+
+  useEffect(() => {
+    hello();
+  });
 
   return (
     <div className="inner">
@@ -32,5 +34,6 @@ function Inner() {
     </div>
   );
 }
+
 
 export default Inner;
